@@ -23,9 +23,13 @@ class Customer {
 
     changeName(name: string) {
         this._name = name;
+        this.validate();
     }
 
     activate() {
+        if(this._address.length === 0){
+            throw new Error("Address is mandatory to activate a customer");
+        }
         this._active = true;
     }
 
