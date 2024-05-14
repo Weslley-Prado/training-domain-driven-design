@@ -22,10 +22,15 @@ describe("Customer unit tests", () => {
 
   it("Should activate customer", () => {
     const customer = new Customer("123", "Customer 1");
-    const address = new Address("Street 1",123,"13330-250","São Paulo");
+    const address = new Address("Street 1", 123, "13330-250", "São Paulo");
     customer.Address = address;
-    customer.activate();    
+    customer.activate();
     expect(customer.isActive()).toBe(true);
   });
 
+  it("Should deactivate customer", () => {
+    const customer = new Customer("123", "Customer 1");
+    customer.deactivate();
+    expect(customer.isActive()).toBe(false);
+  });
 });

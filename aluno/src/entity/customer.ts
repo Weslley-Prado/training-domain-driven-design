@@ -40,7 +40,7 @@ export default class Customer {
         this._active = true;
     }
 
-    desactivate() {
+    deactivate() {
         this._active = false;
     }
 
