@@ -1,3 +1,4 @@
+import Address from "./address";
 import Customer from "./customer";
 
 describe("Customer unit tests", () => {
@@ -18,4 +19,13 @@ describe("Customer unit tests", () => {
     customer.changeName("Jane");
     expect(customer.name).toBe("Jane");
   });
+
+  it("Should activate customer", () => {
+    const customer = new Customer("123", "Customer 1");
+    const address = new Address("Street 1",123,"13330-250","São Paulo");
+    customer.Address = address;
+    customer.activate();    
+    expect(customer.isActive()).toBe(true);
+  });
+
 });
