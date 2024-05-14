@@ -12,6 +12,9 @@ export default class Customer {
         this.validate();
     }
 
+    get name(): string{
+        return this._name;
+    }
     validate() {
         if (this._name.length === 0) {
             throw new Error("Name is required");
