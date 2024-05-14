@@ -8,8 +8,13 @@ import type {Config} from 'jest';
 const config: Config = {
   transform: {
     "^.+\\.(t|j)sx?$": ["@swc/jest", {}],
-    
   },
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "/dist/",
+    "/aluno/src/test.ts"  // Ignora o arquivo específico
+  ],
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
