@@ -18,6 +18,9 @@ export default class Order{
         if(this._id.length === 0){
             throw new Error("Id is required");
         };
+        if(this._items.length === 0){
+            throw new Error("Item qtd must be greater zero");
+        }
         return true;
     }
 
