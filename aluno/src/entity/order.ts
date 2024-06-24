@@ -21,10 +21,14 @@ export default class Order{
         if(this._items.length === 0){
             throw new Error("Item qtd must be greater zero");
         }
+
+        if(this._items.some(item => item.quantity <= 0)){
+            throw new Error("Quantity must be greater than 0");
+        }
         return true;
     }
 
-    total():number{
-        return this._items.reduce((accumulator, item) => accumulator +item._price, 0);
-    }
+    total(): number {
+        return this._items.reduce((acc, item) => acc + item.orderItemTotal(), 0);
+      }
 }
